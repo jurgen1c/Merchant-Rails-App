@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Image url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= image_tag "products/#{product.image_url}" %></td>
+        <td><span class="product_title"><%= product.title %></span><%= product.description %></td>
+        <td><%= print_price(product.price) %></td>
+        <td><%= link_to "Go to #{product.title}", product_path(product)%><td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<p><%= link_to "Create a New Product", new_product_path, id: "new_product" %></p>
+

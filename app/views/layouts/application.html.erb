@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Earthlings</title>
+    <title>Earthlings - Products: <%= controller.action_name %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,26 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="wrapper">
+        <div class="header">
+          <h1>FoodWorks</h1>
+          <p>Your Online Grocery</p>
+        </div>
+
+        <p style="color: green"><%= flash[:notice] %></p>
+
+        <div class="sidebar">
+          (sidebar)
+        </div>
+
+        <div class="main">
+          <%= yield %>
+        </div>
+
+        <div class="footer">
+          Earthlings Online Grocery<br/>
+          A Rails Jumpstart Project
+        </div>
+    </div>
   </body>
 </html>
